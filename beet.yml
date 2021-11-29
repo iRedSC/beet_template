@@ -11,6 +11,7 @@ data_pack:
   pack_format: 7
 
 pipeline:
+  - mecha
   - iredsc.counter
   - iredsc.message_format
 
@@ -18,3 +19,5 @@ meta:
   namespace:
     pack: "{{ project_name | lower }}"
     messages: "messages"
+  mecha:
+    keep_comments: true
