@@ -1,0 +1,20 @@
+---
+output: build/test
+
+version: v0.1.2
+
+data_pack:
+  load:
+    - src
+  name: "[Test] {{ project_name | capitalize }} ({{ project_version }})"
+  description: ''
+  pack_format: 7
+
+pipeline:
+  - iredsc.counter
+  - iredsc.message_format
+
+meta:
+  namespace:
+    pack: "{{ project_name | lower }}"
+    messages: "messages"

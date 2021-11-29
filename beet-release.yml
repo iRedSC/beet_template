@@ -1,0 +1,16 @@
+---
+
+extend:
+  - beet.yml
+
+output: build/release
+name: ''
+
+author: iRedSC
+
+data_pack:
+  name: "{{ project_name | capitalize }} ({{ project_version }})"
+  zipped: true
+
+pipeline:
+  - beet.contrib.minify_function
