@@ -1,23 +1,32 @@
 ---
+version: v0.1.0
 output: build/test
-
-version: v0.1.2
-
+---
 data_pack:
   load:
     - src
   name: "[Test] {{ project_name | capitalize }} ({{ project_version }})"
   description: ''
   pack_format: 7
-
+---
+require:
+  - mecha.contrib.implicit_execute
+  - mecha.contrib.nesting
+  - mecha.contrib.scripting
+  - lectern.contrib.yaml_to_json
 pipeline:
+  - lectern
   - mecha
   - iredsc.counter
   - iredsc.message_format
-
+---
 meta:
   namespace:
-    pack: "{{ project_name | lower }}"
+    pack: ""
     messages: "messages"
   mecha:
+    multiline: true
     keep_comments: true
+  lectern:
+    load:
+      - test.md
