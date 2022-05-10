@@ -1,1 +1,0 @@
-beet -c beet-release.yml build --no-link
